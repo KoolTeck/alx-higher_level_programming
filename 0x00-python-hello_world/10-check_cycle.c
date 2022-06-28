@@ -13,8 +13,8 @@ listint_t *snail, *snake;
 if (!list)
 return (0);
 snail = list;
-snake = list;
-while (snake && snail)
+snake = list->next;
+while (snake && snail && snail->next)
 {
 if (snail == NULL)
 return (0);
