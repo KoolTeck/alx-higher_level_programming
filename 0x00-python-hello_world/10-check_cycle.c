@@ -10,10 +10,9 @@
 int check_cycle(listint_t *list)
 {
 listint_t *snail, *snake;
-if (!list)
-return (0);
+
 snail = list;
-snake = list->next;
+snake = list;
 while (snake && snail && snail->next)
 {
 if (snail == NULL)
