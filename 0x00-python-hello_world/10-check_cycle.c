@@ -15,8 +15,6 @@ snail = list;
 snake = list;
 while (snake && snail && snail->next)
 {
-if (snail == NULL)
-return (0);
 snail = snail->next;
 snake = snake->next->next;
 if (snake == snail)
