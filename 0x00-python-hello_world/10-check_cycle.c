@@ -1,7 +1,7 @@
-#include lists.h
+#include "lists.h"
 
 /**
- * check_cycle - check if a singly list contains a circle
+ * check_cycle - checks if a singly list contains a circle
  *
  * @list: the list to check
  *
@@ -9,8 +9,18 @@
  */
 int check_cycle(listint_t *list)
 {
-listint_t *current;
+listint_t *snail, *snake;
 
-current = list;
- while  
+snail = list;
+snake = list;
+while (snake && snail)
+{
+if (snail == NULL)
+return (0);
+snail = snail->next;
+snake = snake->next->next;
+if (snake == snail)
+return (1);
+}
+return (0);
 }
