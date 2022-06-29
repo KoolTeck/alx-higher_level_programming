@@ -9,5 +9,4 @@ def uppercase(str):
         else:
             n = uni - 32
         print('{:s}'.format(chr(n)), end='')
-        if c == len(str) - 1:
-            print(''.format(""), end='\n')
+    print('{}'.format(''))
