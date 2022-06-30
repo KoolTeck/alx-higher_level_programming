@@ -19,16 +19,30 @@ return (NULL);
 new->n = number;
 new->next = NULL;
 current = *head;
-while (current != NULL)
-{
-if (current->n > number)
-{
-new->next = current;
-prev->next = new;
-break;
+ if (*head == NULL)
+   {
+     *head = new;
+   }
+ else if (number < 0)
+   {
+     *head = new;
+     new->next = current;
+   }
+ else
+   {
+   while (current->next != NULL)
+   {
+     if (current->n > number)
+       {
+	 new->next = current;
+	 prev->next = new;
+	 return (new);
+       }
+     prev = current;
+     current = current->next;
+   }
+   current->next = new;
 }
-prev = current;
-current = current->next;
-}
+
 return (new);
 }
