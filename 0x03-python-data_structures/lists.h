@@ -21,5 +21,7 @@ void free_listint(listint_t *head);
 
 int is_palindrome(listint_t **head);
 
-int compare(int arr1[], int arr2[], int size);
+int compare(int *arr1, int *arr2, int size);
+
+size_t list_len(listint_t *h);
 #endif /* LISTS_H */
