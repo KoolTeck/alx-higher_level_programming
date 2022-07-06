@@ -20,3 +20,4 @@ if __name__ == "__main__":
     else:
         error = "Unknown operator. Available operators: +, -, * and /"
         print("{}".format(error))
+        exit(1)
