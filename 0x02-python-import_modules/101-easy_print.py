@@ -1,4 +1,3 @@
 #!/usr/bin/python3
-import logging
-logging.basicConfig(format='%(message)s', level=logging.INFO)
-logging.info('#pythoniscool')
+from logging import sys as s
+s.stdout.write('#pythoniscool')
