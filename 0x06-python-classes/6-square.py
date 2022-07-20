@@ -82,11 +82,8 @@ class Square:
             for n in range(p2):
                 print()
             for i in range(self.__size):
-                for j in range(p1):
-                    print(" ", end="")
-                for k in range(self.__size):
-                    print("#", end="")
-                print()
+                print(" " * p1, end="")
+                print("#" * self.__size)
 
 
 if __name__ == "__main__":
@@ -95,7 +92,7 @@ if __name__ == "__main__":
 
     print("--")
 
-    mysquare = Square(3, (1, 1))
+    mysquare = Square(4, (8, 3))
     mysquare.my_print()
     print("--")
 
