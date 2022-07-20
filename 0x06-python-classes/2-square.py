@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 """The Square module docstrings.
 
 This module demonstrates creating a Square class and atrributes
@@ -10,7 +11,7 @@ File calling:
 
 
 class Square:
-    """ creates an empty Square class  defining a clas """
+    """ creates an empty Square class  defining a class """
 
     def __init__(self, size=0):
         """docstring on the __init__ method.
