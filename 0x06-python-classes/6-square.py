@@ -44,20 +44,28 @@ class Square:
 
     @position.setter
     def position(self, value):
-        check_v1 = type(value[0]) is int
-        check_v2 = type(value[1]) is int
+        """ sets the current position for square cordinate.
+        Args:
+            value (tuple): tuple of 2 positive integers
+        Raises:
+            TypeError: if value is not tuple of 2 positive integers
+
+        """
+
         err = TypeError("position must be a tuple of 2 positive integers")
-        if check_v1 and check_v2:
-            if value[0] >= 0 and value[1] >= 0:
-                self.__position = value
-            else:
-                raise err
-        else:
+        if not isinstance(value, tuple):
             raise err
+        elif len(value) != 2:
+            raise err
+        elif type(value[0]) is not int or type(value[1]) is not int:
+            raise err
+        elif value[0] < 0 or value[1] < 0:
+            raise err
+        else:
+            self.__position = value
 
     def area(self):
         """ compute and return the current square area
-
         Returns:
             the square area
 
@@ -88,7 +96,7 @@ if __name__ == "__main__":
 
     my_square_2 = Square()
     my_square_2.size = 10
-    my_square_2.position = (5, "0")
+    my_square_2.position = (1, -4)
     my_square_2.my_print()
 
     print("--")
