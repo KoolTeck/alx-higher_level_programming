@@ -20,8 +20,8 @@ class Square:
             size (str): the size of the square
 
         """
-        self.__size = size
-        self.__position = position
+        self.size = size
+        self.position = position
 
     @property
     def size(self):
@@ -90,10 +90,6 @@ if __name__ == "__main__":
 
     print("--")
 
-    mysquare = Square(4, (8, 3))
-    mysquare.my_print()
-    print("--")
-
-    mysquare_3 = Square(3, (3, 0))
-    mysquare_3.my_print()
+    my_square = Square(3, -20)
+    my_square.my_print()
     print("--")
