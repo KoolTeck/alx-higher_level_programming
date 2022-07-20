@@ -81,8 +81,6 @@ class Square:
         for i in range(self.__size):
             for j in range(p1):
                 print(" ", end="")
-                if p2 > 0:
-                    break
             for k in range(self.__size):
                 print("#", end="")
             print()
@@ -94,9 +92,6 @@ if __name__ == "__main__":
 
     print("--")
 
-    my_square_2 = Square()
-    my_square_2.size = 10
-    my_square_2.position = (1, -4)
-    my_square_2.my_print()
-
+    mysquare = Square(5, (3, 2))
+    mysquare.my_print()
     print("--")
