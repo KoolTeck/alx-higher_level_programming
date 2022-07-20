@@ -78,12 +78,15 @@ class Square:
         p2 = self.__position[1]
         if self.__size == 0:
             print()
-        for i in range(self.__size):
-            for j in range(p1):
-                print(" ", end="")
-            for k in range(self.__size):
-                print("#", end="")
-            print()
+        else:
+            for n in range(p2):
+                print()
+            for i in range(self.__size):
+                for j in range(p1):
+                    print(" ", end="")
+                for k in range(self.__size):
+                    print("#", end="")
+                print()
 
 
 if __name__ == "__main__":
@@ -92,6 +95,10 @@ if __name__ == "__main__":
 
     print("--")
 
-    mysquare = Square(5, (3, 2))
+    mysquare = Square(3, (1, 1))
     mysquare.my_print()
+    print("--")
+
+    mysquare_3 = Square(3, (3, 0))
+    mysquare_3.my_print()
     print("--")
