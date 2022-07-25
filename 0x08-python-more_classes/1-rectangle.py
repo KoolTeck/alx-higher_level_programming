@@ -25,7 +25,7 @@ class Rectangle:
     def height(self):
         return self.__height
 
-    @width.setter
+    @height.setter
     def height(self, value):
         if type(value) is not int:
             raise TypeError("height must be an integer")
@@ -39,7 +39,7 @@ if __name__ == "__main__":
     print(type(my_rectangle))
     print(my_rectangle.__dict__)
 
-    my_rectangle = Rectangle(2, "3")
+    my_rectangle = Rectangle(2, 3)
     print(my_rectangle.__dict__)
 
     my_rectangle.width = 10
