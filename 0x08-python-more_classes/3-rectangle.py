@@ -10,9 +10,15 @@ class Rectangle:
         self.height = height
 
     def __str__(self):
+        """ returns str rep of rec with # """
+        string = ''
         if (self.__width == 0 or self.__height == 0):
-            return ('')
-        else
+            return string
+        for row in range(self.__height - 1):
+            string += '#' * self.width
+            string += '\n'
+        string += '#' * self.width
+        return (string)
 
     @property
     def width(self):
@@ -52,6 +58,15 @@ class Rectangle:
 
 
 if __name__ == "__main__":
-    my_rectangle = Rectangle(2, 4)
-    print("Area: {}".format(my_rectangle.area()))
 
+    my_rectangle = Rectangle(2, 4)
+
+    print(str(my_rectangle))
+    print(repr(my_rectangle))
+
+    print("--")
+
+    my_rectangle.width = 0
+    my_rectangle.height = 0
+    print(my_rectangle)
+    print(repr(my_rectangle))
