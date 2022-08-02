@@ -40,5 +40,17 @@ Passing test cases
 [1, 2, 3, 4, 5]
 
 
-Edge cases
-----------
+>>> lis = MyList()
+
+>>> print(lis)
+[]
+
+>>> lis.print_sorted()
+[]
+
+>>> lis.append(-3)
+
+>>> lis.append(-4)
+
+>>> print(lis)
+[-3, -4]
