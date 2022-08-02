@@ -8,14 +8,11 @@ def inherits_from(obj, a_class):
 
     """
 
-    if isinstance(obj, a_class):
-        if type(obj) is not a_class:
-            return True
-    False
+    return (isinstance(obj, a_class))
 
 
 if __name__ == "__main__":
-    a = 2
+    a = True
     if inherits_from(a, int):
         print("{} inherited from class {}".format(a, int.__name__))
     if inherits_from(a, bool):
