@@ -15,7 +15,7 @@
 """
 
 
-def matrix_divided(matrix, div):
+def matrix_divided(matrix=[[]], div=1):
     """
     computes the divsion of each element of a matrix
 
@@ -29,6 +29,8 @@ def matrix_divided(matrix, div):
 
     err1 = 'matrix must be a matrix (list of lists) of integers/floats'
     err2 = 'Each row of the matrix must have the same size'
+    if len(matrix[0]) == 0:
+        return
     if type(matrix) is not list:
         raise TypeError(err1)
     if div == 0:
