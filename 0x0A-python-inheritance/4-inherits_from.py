@@ -8,7 +8,10 @@ def inherits_from(obj, a_class):
 
     """
 
-    return (isinstance(obj, a_class))
+    if isinstance(type(obj), a_class):
+        if type(obj) is not a_class:
+            return (True)
+    return False
 
 
 if __name__ == "__main__":
