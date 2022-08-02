@@ -52,5 +52,5 @@ Passing test cases
 
 >>> lis.append(-4)
 
->>> print(lis)
-[-3, -4]
+>>> lis.print_sorted()
+[-4, -3]
