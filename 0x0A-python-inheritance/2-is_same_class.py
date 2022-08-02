@@ -5,7 +5,7 @@
 
 def is_same_class(obj, a_class):
     """ checks whether an object is an instance of a class """
-    
+
     return (obj.__class__ is a_class)
 
 
