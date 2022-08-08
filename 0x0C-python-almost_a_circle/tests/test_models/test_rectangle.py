@@ -104,7 +104,7 @@ class rectangleClassTestCases(unittest.TestCase):
         with self.assertRaises(ValueError):
             r8 = Rectangle(5, 2, -2, 2)
         with self.assertRaises(ValueError):
-            r8 = Rectangle(-5, 2, 2, -2)
+            r8 = Rectangle(5, 2, 2, -2)
         with self.assertRaises(ValueError):
             r8 = Rectangle(0, 2)
         with self.assertRaises(ValueError):
