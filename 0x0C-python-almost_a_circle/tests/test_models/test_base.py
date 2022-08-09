@@ -79,8 +79,8 @@ class baseClassTestCase(unittest.TestCase):
 
     def test_save_to_file_method_with_none_arg(self):
         """ test the save_to_file class method with None param """
-        r2 = Rectangle(4, 5)
-        r2.save_to_file(None)
+        r3 = Rectangle(4, 5)
+        r3.save_to_file(None)
 
         with open("Rectangle.json", "r") as file:
             result = json.load(file)
@@ -94,15 +94,15 @@ class baseClassTestCase(unittest.TestCase):
 
     def test_save_to_file_method_with_empty_arg(self):
         """ test the save_to_file class method with empty list """
-        r3 = Rectangle(4, 5)
-        r3.save_to_file([])
+        r4 = Rectangle(4, 5)
+        r4.save_to_file([])
 
         with open("Rectangle.json", "r") as file:
             result = json.load(file)
         self.assertEqual(result, [])
 
-        s3 = Square(4, 5)
-        s3.save_to_file([])
+        s4 = Square(4, 5)
+        s4.save_to_file([])
         with open("Square.json", "r") as file:
             result = json.load(file)
         self.assertEqual(result, [])
