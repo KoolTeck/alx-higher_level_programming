@@ -85,21 +85,21 @@ class baseClassTestCase(unittest.TestCase):
         with open("Rectangle.json", "r") as file:
             result = json.load(file)
         self.assertEqual(result, [])
-
-        Rectangle.save_to_file([])
+        
+        r2 = Rectangle(4, 6)
+        r2.save_to_file([])
         with open("Rectangle.json", "r") as file:
             result = json.load(file)
         self.assertEqual(result, [])
         
         s3 = Square(4, 5)
         s3.save_to_file(None)
-
         with open("Square.json", "r") as file:
             result = json.load(file)
         self.assertEqual(result, [])
-
+        
+        s3 = Square(4, 6)
         s3.save_to_file([])
-
         with open("Square.json", "r") as file:
             result = json.load(file)
         self.assertEqual(result, [])
