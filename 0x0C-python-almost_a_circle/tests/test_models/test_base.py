@@ -77,7 +77,7 @@ class baseClassTestCase(unittest.TestCase):
         self.assertIsInstance(dict_lis, list)
         self.assertEqual(expected, dict_lis)
 
-    def test_save_to_file_method_with_none_and_empty_arg(self):
+    def test_save_to_file_method_with_none_arg(self):
         """ test the save_to_file class method with None param """
         r2 = Rectangle(4, 5)
         r2.save_to_file(None)
@@ -85,25 +85,28 @@ class baseClassTestCase(unittest.TestCase):
         with open("Rectangle.json", "r") as file:
             result = json.load(file)
         self.assertEqual(result, [])
-        
-        r2 = Rectangle(4, 6)
-        r2.save_to_file([])
-        with open("Rectangle.json", "r") as file:
-            result = json.load(file)
-        self.assertEqual(result, [])
-        
+    
         s3 = Square(4, 5)
         s3.save_to_file(None)
         with open("Square.json", "r") as file:
             result = json.load(file)
         self.assertEqual(result, [])
-        
-        s3 = Square(4, 6)
+
+    def test_save_to_file_method_with_empty_arg(self):
+        """ test the save_to_file class method with empty list """
+        r3 = Rectangle(4, 5)
+        r3.save_to_file([])
+
+        with open("Rectangle.json", "r") as file:
+            result = json.load(file)
+        self.assertEqual(result, [])
+
+        s3 = Square(4, 5)
         s3.save_to_file([])
         with open("Square.json", "r") as file:
             result = json.load(file)
         self.assertEqual(result, [])
-
+    
     def test_from_json_string_with_valid_arg(self):
         """ test the from_json_string static methid with valid param """
         list_input = [
