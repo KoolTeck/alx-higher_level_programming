@@ -77,7 +77,7 @@ class baseClassTestCase(unittest.TestCase):
         self.assertIsInstance(dict_lis, list)
         self.assertEqual(expected, dict_lis)
 
-    def test_save_to_file_method_with_none_arg(self):
+    def test_save_to_file_method_with_none_and_empty_arg(self):
         """ test the save_to_file class method with None param """
         r2 = Rectangle(4, 5)
         r2.save_to_file(None)
@@ -86,9 +86,19 @@ class baseClassTestCase(unittest.TestCase):
             result = json.load(file)
         self.assertEqual(result, [])
 
+        Rectangle.save_to_file([])
+        with open("Rectangle.json", "r") as file:
+            result = json.load(file)
+        self.assertEqual(result, [])
         
         s3 = Square(4, 5)
         s3.save_to_file(None)
+
+        with open("Square.json", "r") as file:
+            result = json.load(file)
+        self.assertEqual(result, [])
+
+        s3.save_to_file([])
 
         with open("Square.json", "r") as file:
             result = json.load(file)
@@ -107,6 +117,7 @@ class baseClassTestCase(unittest.TestCase):
     
         json_list_input = Square.to_json_string(list_input)
         list_output = Square.from_json_string(json_list_input)
+
         self.assertIsInstance(list_output, list)
         self.assertEqual(list_input, list_output)
 
@@ -128,6 +139,7 @@ class baseClassTestCase(unittest.TestCase):
         self.assertIs(type(r4), Rectangle)
         self.assertIsNot(r3, r4)
         self.assertNotEqual(r3, r4)
+
         self.assertIsInstance(r4, Base)
 
         s4 = Square.create(size=4, x=2, y=3)

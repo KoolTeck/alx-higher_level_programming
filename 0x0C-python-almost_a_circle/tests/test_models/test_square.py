@@ -37,8 +37,16 @@ class TestSquareClass(unittest.TestCase):
         """ test when invalid arg is passed into square """
         with self.assertRaises(TypeError):
             sq2 = Square('2')
+        with self.assertRaises(TypeError):
+            sq2 = Square(2, '2')
+        with self.assertRaises(TypeError):
+            sq2 = Square(1, 2, '3')
         with self.assertRaises(ValueError):
             sq2 = Square(-2)
+        with self.assertRaises(ValueError):
+            sq2 = Square(1, -2)
+        with self.assertRaises(ValueError):
+            sq2 = Square(1, 2, -2)
         with self.assertRaises(ValueError):
             sq2 = Square(0)
             

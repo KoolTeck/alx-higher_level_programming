@@ -1,3 +1,4 @@
+
 #!/usr/bin/python3
 """ The rectangle testing module """
 
@@ -28,7 +29,14 @@ class rectangleClassTestCases(unittest.TestCase):
         r3 = Rectangle(10, 2, 0, 0, 12)
         self.assertEqual(r3.id, 12)
 
-    def test_rec_valid_args(self):
+    def test_rec_with_valid_args(self):
+        r4 = Rectangle(1, 2)
+        self.assertEqual(r4.width, 1)
+        self.assertEqual(r4.height, 2)
+        r4 = Rectangle(1, 2, 3)
+        self.assertEqual(r4.width, 1)
+        self.assertEqual(r4.height, 2)
+        self.assertEqual(r4.x, 3)
         r4 = Rectangle(10, 2, 2, 4, 12)
         self.assertEqual(r4.width, 10)
         self.assertEqual(r4.height, 2)
