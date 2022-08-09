@@ -12,4 +12,4 @@ if __name__ == "__main__":
     s3 = Square(2, 3)
     s3.save_to_file([])
 
-        
+    print(Square.create(**{ 'size': 2 }))
