@@ -9,7 +9,11 @@ Base = declarative_base()
 
 
 class State(Base):
-    """ models a state class """
+    """ models a state class of Mysql db
+        __table_name__(str): the name of the table to be created
+        id: the id column
+        name: rep. the name column
+    """
     __tablename__ = 'states'
     id = Column(
         Integer, nullable=False,
