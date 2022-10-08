@@ -22,9 +22,8 @@ if __name__ == "__main__":
     try:
         new_state = State(name='Louisiana')
         session.add(new_state)
-        new_state_id = session.query(
-            State.id).filter_by(name='Louisiana').first()
-        print("{}".format(new_state_id[0]))
+        session.commit()
+        print("{}".format(new_state.id))
     except Exception as err:
         print(err)
     session.close()
