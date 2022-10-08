@@ -6,9 +6,6 @@ instance Base = declarative_base():
 from sqlalchemy import Column, Integer, String, ForeignKey
 from model_state import Base, State
 from sqlalchemy.orm import relationship
-#from sqlalchemy.ext.declarative import declarative_base
-
-#Base = declarative_base()
 
 
 class City(Base):
@@ -16,7 +13,7 @@ class City(Base):
         __table_name__(str): the name of the table to be created
         id(sqlalchemy.Integer): the id column
         name(sqlalchemy.String): rep. the name column
-        state_id(sqlalchemy.String): rep. the state_id column 
+        state_id(sqlalchemy.String): rep. the state_id column
     """
     __tablename__ = 'cities'
     id = Column(
