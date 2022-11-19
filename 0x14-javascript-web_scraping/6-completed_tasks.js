@@ -18,7 +18,7 @@ request.get(process.argv[2], (error, response, body) => {
         count++;
       }
     });
-      return count > 0 ? count : 1;
+    return count > 0 ? count : 0;
   }
   console.log(completed);
 });
