@@ -6,10 +6,10 @@ request.get(process.argv[2], (error, response, body) => {
   }
   const resp = JSON.parse(body);
   let count = 0;
-  const completed = {};
+  const userCompleted = {};
   resp.forEach(user => {
     const id = user.userId;
-    completed[id] = computeTask(id);
+    userCompleted[id] = computeTask(id);
     count = 0;
   });
   function computeTask (id) {
@@ -18,7 +18,7 @@ request.get(process.argv[2], (error, response, body) => {
         count++;
       }
     });
-    return count > 0 ? count : 0;
+    return count;
   }
-  console.log(completed);
+  console.log(userCompleted);
 });
